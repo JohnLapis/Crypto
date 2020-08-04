@@ -17,11 +17,8 @@ def encrypt(pt, key):
 
 
 if __name__ == '__main__':
-    with open('/home/john/Downloads/7.txt', 'r') as f:
+    with open('7.txt', 'r') as f:
         message = a2b_base64(f.read().encode())
 
     key = b'YELLOW SUBMARINE'
-    print(main(message, key).decode())
- 
-
-
+    print(decrypt(message, key))

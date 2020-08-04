@@ -29,10 +29,12 @@ def decrypt(ct, key, iv):
 
 
 if __name__ == '__main__':
-    with open('/home/john/Downloads/10.txt', 'r') as f:
-        message = f.read().encode()#''.join([o[:-1] for o in f.readlines()]).encode()
+    with open('10.txt', 'r') as f:
+        #''.join([o[:-1] for o in f.readlines()]).encode()
+        message = f.read().encode()
 
     nt = decrypt(message, b'YELLOW SUBMARINE', b'\x00'*16)
 
     o = encrypt(nt, b'YELLOW SUBMARINE', b'\x00'*16)[:28]
 
+    print(o)
